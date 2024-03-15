@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
+        MinHeight="350"
+        MaxHeight="350"
+        MinWidth="500"
+        MaxWidth="500"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        x:Class="whottadota.MainWindow"
+        Background="Transparent"
+        TransparencyLevelHint="AcrylicBlur"
+        Title="whottadota">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" > </ColumnDefinition>
+            <ColumnDefinition Width="150"> </ColumnDefinition>
+            <ColumnDefinition Width="150"> </ColumnDefinition>
+            <ColumnDefinition Width="150"> </ColumnDefinition>
+            <ColumnDefinition Width="150"> </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" ></RowDefinition>
+            <RowDefinition Height="90" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1"  Grid.Column="1">
+        <TextBlock Foreground= "#FF7373" Text="WELCOME TO" FontSize="25" Height="50" Width="180" FontWeight="UltraBold" />
+        <TextBlock Text="WHOTTADOTA" Foreground= "#ff21" HorizontalAlignment="Left" FontSize="60" Height="70" Width="500" FontWeight="UltraBold" />
+        </StackPanel>
+                
+        <StackPanel Grid.Row="5" Spacing="25"  Grid.Column="" Orientation="Horizontal">
+            <Button BorderBrush="Aqua" BorderThickness="4" Name="TournamentsBTN" Click="TournamentsBTN_OnClick" Background = "MediumVioletRed" Foreground="Aquamarine" Content="Турниры" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Left" FontSize="25"/>
+            <Button BorderBrush="Aqua" BorderThickness="4" Name="TeamsBTN" Click="TeamsBTN_OnClick" Background = "MediumVioletRed" Foreground="Aquamarine"  Content="Команды" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Center" FontSize="25"  />
+            <Button  BorderBrush="Aqua" BorderThickness="4" Name="NewsBTN" Click="NewsBTN_OnClick" Background = "MediumVioletRed" Foreground="Aquamarine"  Content="Новости" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150"  HorizontalAlignment="Right" FontSize="25"  />
+        </StackPanel>
+        
+        </Grid>
+</Window>

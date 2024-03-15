@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.TeamWindow"
+        Title="TeamWindow">
+        <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                <Button Name="AddZakaz" Content="Добавить" Margin="5" Background="Bisque" ></Button>
+                <Button Name="RedZakaz" Content="Редактировать" Margin="5" Background="Bisque" ></Button>
+                <Button Name="DelZakaz" Content="Удалить" Margin="5" Background="Bisque" ></Button>
+                <Button Name = "Back" Content="Назад" Margin="5" Background="Bisque" Click="Back_OnClick" ></Button>
+        </StackPanel>
+        <DataGrid Name="ClientGrid" x:CompileBindings="False" Margin="10">
+                <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Logo" Binding="{Binding Logo}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Players" Binding="{Binding PlayerList}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Location" Binding="{Binding Location}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Total $" Binding="{Binding }"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Link" Binding="{Binding Link}"></DataGridTextColumn>
+                </DataGrid.Columns>
+        </DataGrid>
+        </DockPanel>
+</Window>

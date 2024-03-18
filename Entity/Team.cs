@@ -7,6 +7,7 @@ namespace whottadota;
 public class Team
 {
     public int ID { get; set; }
+    public string Name { get; set; }
     public byte[] Image { get; set; }
     public Uri Logo => new Uri($"avares://whottadota/Image/{Image}");
 
@@ -18,10 +19,7 @@ public class Team
             return new Bitmap(memoryStream);
         }
     }
-
-    public string PlayerList { get; set; }
     public string Location { get; set; }
-    public decimal WinMoney { get; set; }
-    public string Link { get; set; }
+    public decimal TotalWinnings { get; set; }
 
 }

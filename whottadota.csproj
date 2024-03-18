@@ -22,10 +22,11 @@
 
     <ItemGroup>
       <None Remove="Image\BetBoom_Team.png" />
-      <AvaloniaResource Include="Image\BetBoom_Team.png" />
       <None Remove="Image\Animajor.jpg" />
       <AvaloniaResource Include="Image\Animajor.jpg" />
       <None Remove="Image\riadhnormpic.jpg" />
       <AvaloniaResource Include="Image\riadhnormpic.jpg" />
+      <None Remove="Image\betboomteam.jpg" />
+      <AvaloniaResource Include="Image\betboomteam.jpg" />
     </ItemGroup>
 </Project>

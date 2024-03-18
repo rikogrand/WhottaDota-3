@@ -6,8 +6,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="whottadota.TeamWindow"
         Title="TeamWindow"
-        Width="1000"
-        Height="700"
+        Height="660"
+        Width="1530"
         x:DataType="whottadota:Team"
         Background="Transparent"
         TransparencyLevelHint="AcrylicBlur"
@@ -16,7 +16,8 @@
         ExtendClientAreaToDecorationsHint="True"
         >
     <Window.Styles>
-     <Style Selector="Button TextBlock">
+
+        <Style Selector="Button TextBlock">
 
                 <Setter Property="Effect">
                     <DropShadowEffect OffsetX="0" OffsetY="0" Opacity="1" Color="Blue" BlurRadius="20"></DropShadowEffect>
@@ -24,7 +25,7 @@
 
         </Style>
         <Style Selector="TabControl">
-            <Setter Property="Height" Value="700"/>
+            <Setter Property="Height" Value="650"/>
         </Style>
         <Style Selector="TabControl WrapPanel">
             <Setter Property="Background" Value="Transparent"/>
@@ -46,7 +47,7 @@
             <Setter Property="Foreground" Value="#AD66D5"/>
             <Setter Property="FontWeight" Value="UltraBold"/>
             <Setter Property="Margin" Value="0 0 0 0"/>
-            <Setter Property="Padding" Value="50 0 50 0"/>
+            <Setter Property="Padding" Value="100 0 100 0"/>
         </Style>
 
         <Style Selector="TabItem:focus">
@@ -79,63 +80,78 @@
             <Setter Property="Foreground" Value="#AD66D5"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontWeight" Value="ExtraBold" />
-            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontSize" Value="20" />
         </Style>
     </Window.Styles>
     <TabControl>
         <TabItem  Header="CIS" VerticalContentAlignment="Center">
-    <Grid>
-           <Grid.ColumnDefinitions>
-               <ColumnDefinition></ColumnDefinition>
-               <ColumnDefinition></ColumnDefinition>
-               <ColumnDefinition></ColumnDefinition>
-               <ColumnDefinition></ColumnDefinition>
-               <ColumnDefinition></ColumnDefinition>
-               <ColumnDefinition></ColumnDefinition>
-           </Grid.ColumnDefinitions>    
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row = "1" Grid.Column="0" >
-                <Border Width="150" Height="150"  BorderThickness="7"
-                        BorderBrush="MediumVioletRed" >
-                    <TextBlock VerticalAlignment="Center" IsVisible="False"  HorizontalAlignment="Center"  Text="BetBoom" FontSize="20"  >
-                    <Image Source="avares://whottadota/Image/BetBoom_Team.png" Stretch="Fill" />
-                        </TextBlock>
-                </Border>
-            </StackPanel>
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row = "1" Grid.Column="1" >
-                <Border Width="150" Height="150"  BorderThickness="7"
-                        BorderBrush="MediumVioletRed" >
-                    <TextBlock VerticalAlignment="Center" IsVisible="False"  HorizontalAlignment="Center"  Text="BetBoom" FontSize="20"  >
-                        <Image Source="avares://whottadota/Image/BetBoom_Team.png" Stretch="Fill" />
-                    </TextBlock>
-                </Border>
-            </StackPanel>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row = "1" Grid.Column="2" >
-            <Border Width="150" Height="150"  BorderThickness="7"
-                    BorderBrush="MediumVioletRed" >
-                <TextBlock VerticalAlignment="Center" IsVisible="False"  HorizontalAlignment="Center"  Text="BetBoom" FontSize="20"  >
-                    <Image Source="avares://whottadota/Image/BetBoom_Team.png" Stretch="Fill" />
-                </TextBlock>
-            </Border>
-        </StackPanel>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row = "1" Grid.Column="3" >
-            <Border Width="150" Height="150"  BorderThickness="7"
-                    BorderBrush="MediumVioletRed" >
-                <TextBlock VerticalAlignment="Center" IsVisible="False"  HorizontalAlignment="Center"  Text="BetBoom" FontSize="20"  >
-                    <Image Source="avares://whottadota/Image/BetBoom_Team.png" Stretch="Fill" />
-                </TextBlock>
-            </Border>
-        </StackPanel>
-        </Grid>
+     <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1"  >
+                        <DataGrid x:Name="TeamDG"
+                                   AutoGenerateColumns="False"
+                                   IsReadOnly="True"
+                                   RowHeight="150"
+                                   GridLinesVisibility="All"
+                                   BorderThickness="7"
+                                   BorderBrush="MediumVioletRed"
+                                   Height="500"
+                                   MinWidth="1200"
+                                   MaxWidth="1400"
+                                   HorizontalGridLinesBrush="MediumVioletRed"
+                                   VerticalGridLinesBrush="MediumVioletRed"
+                                   VerticalAlignment="Top"
+                                   FrozenColumnCount="6"
+                                   x:CompileBindings="False">
+                            <DataGrid.Columns >
+                                <DataGridTemplateColumn  Header="Logo" Width="300">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate DataType="whottadota:Team">
+                                            <Image Source="{Binding bitmap}" Stretch="Fill"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>                    
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn FontSize="22" Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn FontSize="22" Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding TotalWinnings}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Выигранные призовые</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn FontSize="22" Width="*" Foreground="PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Расположение</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                </DataGrid.Columns>
+                        </DataGrid>
+            </Grid>
+                <Button Grid.Row="0" Grid.Column="0" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Click="BackBTN_OnClick" Name="BackBTN" Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+                <TextBlock  Foreground="Aqua" Background="Black" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Name="SearchBlock" Text="Нажмите для поиска" Width="150" Height="40" />
+                <TextBox TextChanged="SearchTB_OnTextChanged"  TextWrapping="Wrap" Grid.Row="0" Grid.Column="1"  Width="150" Height="40"  Name="SearchTB" />
+                <ComboBox SelectionChanged="SortCB_OnSelectionChanged" Grid.Row="0" Grid.Column="2" Name="SortCB"  Width="200" Height="20"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <ComboBoxItem FontSize="8">Все столбцы</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По названию</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По $$$</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По локации</ComboBoxItem>
+                </ComboBox>
+                </Grid>
         </TabItem>
     </TabControl>
 </Window>

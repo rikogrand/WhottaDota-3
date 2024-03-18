@@ -109,10 +109,11 @@
                                    BorderThickness="7"
                                    BorderBrush="MediumVioletRed"
                                    Height="500"
-                                   Width="1500"
+                                   Width="1000"
                                    HorizontalGridLinesBrush="MediumVioletRed"
                                    VerticalGridLinesBrush="MediumVioletRed"
                                    VerticalAlignment="Top"
+                                   FrozenColumnCount="6"
                                    x:CompileBindings="False">
                             <DataGrid.Columns >
                                 <DataGridTemplateColumn  Header="Logo" Width="300">
@@ -122,35 +123,43 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>                    
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn FontSize="25" Binding="{Binding Name}" >
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
                                     <DataGridTextColumn.Header>
-                                        <TextBlock  FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Название</TextBlock>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="25"   Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
+                                <DataGridTextColumn Width="*"  Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold"  HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Дата начала</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата начала</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="25"   Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold"  Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Дата окончания</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата окончания</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="25"  Binding="{Binding PrizePool}">
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Призовой фонд</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Призовой фонд</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="25" Binding="{Binding Location}">
+                                <DataGridTextColumn Width="*" Foreground="PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Расположение</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Расположение</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
                                 </DataGrid.Columns>
                         </DataGrid>
             </Grid>
-                <Button Grid.Row="0" Grid.Column="1" BorderBrush="Aqua" BorderThickness="2"   Background = "MediumVioletRed" Foreground="Aquamarine" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Click="Button_OnClick" FontSize="11"/>
+                <Button Grid.Row="0" Grid.Column="0" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="BackTierOne_BTN" Click="BackBTN_OnClick" Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+                <TextBlock  Foreground="Aqua" Background="Black" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Name="searchTierOneBlock" Text="Нажмите для поиска" Width="150" Height="40" />
+                <TextBox  TextChanged="SearchTierOneTB_OnTextChanged" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1"  Width="150" Height="40"  Name="searchTierOneTB" />
+                <ComboBox Grid.Row="0" Grid.Column="2" Name="SortTierOneCB"  Width="200" Height="20" SelectionChanged="SortTierOneCB_OnSelectionChanged"  HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <ComboBoxItem FontSize="8">Все столбцы</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По названию</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По призовому фонду</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По локации</ComboBoxItem>
+                </ComboBox>
                 </Grid>
         </TabItem>
         <TabItem>
@@ -181,48 +190,58 @@
                                    BorderThickness="7"
                                    BorderBrush="MediumVioletRed"
                                    Height="500"
-                                   Width="1470"
+                                   MinWidth="1200"
+                                   MaxWidth="1400"
                                    HorizontalGridLinesBrush="MediumVioletRed"
                                    VerticalGridLinesBrush="MediumVioletRed"
                                    VerticalAlignment="Top"
+                                   FrozenColumnCount="6"
                                    x:CompileBindings="False">
-                            <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Logo" Width="300">
+                            <DataGrid.Columns >
+                                <DataGridTemplateColumn  Header="Logo" Width="300">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate DataType="whottadota:Tournament">
                                             <Image Source="{Binding bitmap}" Stretch="Fill"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>                    
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn FontSize="30" Binding="{Binding Name}">
+                                <DataGridTextColumn Width="*" FontSize="15" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Название</TextBlock>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30"   Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
+                                <DataGridTextColumn Width="*" FontSize="22"  Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold"  HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Дата начала</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата начала</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30"   Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
+                                <DataGridTextColumn Width="*" FontSize="22" Foreground= "PaleVioletRed"  FontWeight="ExtraBold"  Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Дата окончания</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата окончания</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30"  Binding="{Binding PrizePool}">
+                                <DataGridTextColumn  Width="*" FontSize="22" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Призовой фонд</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Призовой фонд</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30" Binding="{Binding Location}">
+                                <DataGridTextColumn Width="*" FontSize="22" Foreground="PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="25" Foreground="Aqua">Расположение</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Расположение</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
                                 </DataGrid.Columns>
                         </DataGrid>
             </Grid>
-                <Button Grid.Row="0" Grid.Column="1" BorderBrush="Aqua" BorderThickness="2"   Background = "MediumVioletRed" Foreground="Aquamarine" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Click="Button_OnClick" FontSize="11"/>
+                <Button Grid.Row="0" Grid.Column="0" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="Back_BTN" Click="BackBTN_OnClick" Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+                <TextBlock  Foreground="Aqua" Background="Black" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Name="searchTiersBlock" Text="Нажмите для поиска" Width="150" Height="40" />
+                <TextBox  TextChanged="SearchTiersTB_OnTextChanged" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1"  Width="150" Height="40"  Name="searchTiersTB" />
+                <ComboBox Grid.Row="0" Grid.Column="2" Name="SortTiersCB"  Width="200" Height="20" SelectionChanged="SortTiersCB_OnSelectionChanged"  HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <ComboBoxItem FontSize="8">Все столбцы</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По названию</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По призовому фонду</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По локации</ComboBoxItem>
+                </ComboBox>
                 </Grid>
         </TabItem>
         
@@ -246,52 +265,70 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    
                 </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1" Grid.Row="1"  >
+            <Grid Grid.Column="3" Grid.Row="1"  >
                         <DataGrid x:Name="byUserDG"
                                    AutoGenerateColumns="False"
                                    IsReadOnly="True"
-                                   RowHeight="50"
+                                   RowHeight="150"
                                    GridLinesVisibility="All"
                                    BorderThickness="7"
                                    BorderBrush="MediumVioletRed"
                                    Height="500"
-                                   Width="1180"
+                                   MinWidth="1200"
+                                   MaxWidth="1400"
                                    HorizontalGridLinesBrush="MediumVioletRed"
                                    VerticalGridLinesBrush="MediumVioletRed"
                                    VerticalAlignment="Top"
+                                   FrozenColumnCount="4"
                                    x:CompileBindings="False">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn FontSize="30" Binding="{Binding Name}">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Width="*" FontSize="22" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
                                     <DataGridTextColumn.Header>
-                                        <TextBlock  FontWeight="Bold" HorizontalAlignment="Center" FontSize="23" Foreground="Aqua">Название</TextBlock>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
+                                <DataGridTextColumn Width="*" FontSize="22"  Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold"   HorizontalAlignment="Center" FontSize="23" Foreground="Aqua">Дата начала</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата начала</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30"   Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
+                                <DataGridTextColumn Width="*" FontSize="22" Foreground= "PaleVioletRed"  FontWeight="ExtraBold"  Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="23" Foreground="Aqua">Дата окончания</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата окончания</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30"  Binding="{Binding PrizePool}">
+                                <DataGridTextColumn Width="*" FontSize="22" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="23" Foreground="Aqua">Призовой фонд</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Призовой фонд</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn FontSize="30" Binding="{Binding Location}">
+                                <DataGridTextColumn Width="*" FontSize="22" Foreground="PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}">
                                     <DataGridTextColumn.Header>
-                                        <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="23" Foreground="Aqua">Расположение</TextBlock>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Расположение</TextBlock>
                                     </DataGridTextColumn.Header>
                                 </DataGridTextColumn>
                                 </DataGrid.Columns>
                         </DataGrid>
-            </Grid>
-                <Button Grid.Row="0" Grid.Column="1" BorderBrush="Aqua" BorderThickness="2"   Background = "MediumVioletRed" Foreground="Aquamarine" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Click="Button_OnClick" FontSize="11"/>
                 </Grid>
+                 <Button Grid.Row="0" Grid.Column="1" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="BackBTN" Click="BackBTN_OnClick" Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+                 <TextBlock  Foreground="Aqua" Background="Black" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Name="searchBlock" Text="Нажмите для поиска" Width="150" Height="40" />
+                 <TextBox  TextChanged="SearchTB_OnTextChanged" TextWrapping="Wrap" Grid.Row="0" Grid.Column="2"  Width="150" Height="40"  Name="searchTB" />
+                 <ComboBox Grid.Row="0" Grid.Column="3" Name="SortCB"  Width="200" Height="20" SelectionChanged="SortCB_OnSelectionChanged"  HorizontalAlignment="Left" VerticalAlignment="Center" >
+                     <ComboBoxItem FontSize="8">Все столбцы</ComboBoxItem>
+                     <ComboBoxItem FontSize="8">По названию</ComboBoxItem>
+                     <ComboBoxItem FontSize="8">По призовому фонду</ComboBoxItem>
+                     <ComboBoxItem FontSize="8">По расположению</ComboBoxItem>
+                 </ComboBox>
+                 <Button Grid.Row="0" Grid.Column="5" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="EditBTN" Click="EditBTN_OnClick"  Background = "Transparent" Foreground="White" Content="Изменить" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+                 <Button Grid.Row="0" Grid.Column="6" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="DeleteBTN" Click="DeleteBTN_OnClick" Background = "Transparent" Foreground="White" Content="Удалить" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+
+             </Grid>
         </TabItem>
         <TabItem>
             <TabItem.Header>
@@ -329,7 +366,7 @@
         <TextBlock Foreground="Aqua" FontSize="25" FontWeight="ExtraBold" Grid.Row="5" Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center">Призовой фонд</TextBlock>
         <TextBox BorderBrush="Aqua" FontSize="15" FontWeight="ExtraBold" Foreground="MediumVioletRed" BorderThickness="3" Grid.Row="5" Grid.Column="3"   Name="prizePoolTB" Height="40" HorizontalAlignment="Left" Width="200" Text="{Binding PrizePool }"/>
         <StackPanel  HorizontalAlignment="Center" Grid.Row="6" Grid.Column="3" Width="300" Spacing="10" Orientation="Horizontal">
-           <Button Name="AddUserTournamentBTN" Click="AddUserTournamentBTN_OnClick" FontSize="20" HorizontalContentAlignment="Center" FontWeight="ExtraBold" BorderBrush="Aqua" BorderThickness="2"  Height="40" Width="150"  Background = "MediumVioletRed" Foreground="Aquamarine" Content="Добавить"/>
+           <Button Name="AddUserTournamentBTN" Click="AddUserTournamentBTN_OnClick"  FontSize="20" HorizontalContentAlignment="Center" FontWeight="ExtraBold" BorderBrush="Aqua" BorderThickness="2"  Height="40" Width="150"  Background = "MediumVioletRed" Foreground="Aquamarine" Content="Добавить"/>
        </StackPanel>
    </Grid>
         </TabItem>

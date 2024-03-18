@@ -4,6 +4,8 @@
     <option name="projectPerEditor">
       <map>
         <entry key="App.axaml" value="whottadota.csproj" />
+        <entry key="DeleteTournamentsByUsersWindow.axaml" value="whottadota.csproj" />
+        <entry key="EditByUsersTournamentsWindow.axaml" value="whottadota.csproj" />
         <entry key="MainWindow.axaml" value="whottadota.csproj" />
         <entry key="NewsWindow.axaml" value="whottadota.csproj" />
         <entry key="TeamWindow.axaml" value="whottadota.csproj" />

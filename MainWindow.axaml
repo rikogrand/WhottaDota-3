@@ -3,16 +3,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
-        MinHeight="350"
-        MaxHeight="350"
-        MinWidth="500"
-        MaxWidth="500"
+        MinHeight="400"
+        MaxHeight="400"
+        MinWidth="600"
+        MaxWidth="600"
         CanResize="False"
         WindowStartupLocation="CenterScreen"
         x:Class="whottadota.MainWindow"
         Background="Transparent"
         TransparencyLevelHint="AcrylicBlur"
         Title="whottadota">
+    <Window.Styles>
+    <Style Selector="Button">
+        <Style.Animations>
+                <Animation Duration="0:0:0:5" Easing="SineEaseInOut" FillMode="Both" IterationCount="INFINITE" PlaybackDirection="AlternateReverse">
+                    <KeyFrame Cue="0">
+                        <Setter Property="BorderBrush" Value="Aqua"></Setter>
+                    </KeyFrame>
+                    <KeyFrame Cue="100">
+                        <Setter Property="BorderBrush" Value="MediumVioletRed"></Setter>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+            </Style>
+        </Window.Styles>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50" > </ColumnDefinition>
@@ -30,14 +44,14 @@
             <RowDefinition Height="50" ></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1"  Grid.Column="1">
-        <TextBlock Foreground= "#FF7373" Text="WELCOME TO" FontSize="25" Height="50" Width="180" FontWeight="UltraBold" />
-        <TextBlock Text="WHOTTADOTA" Foreground= "#ff21" HorizontalAlignment="Left" FontSize="60" Height="70" Width="500" FontWeight="UltraBold" />
+        <TextBlock Foreground= "#7442c8" Text="WELCOME TO" FontSize="25" Height="50" Width="180" FontWeight="UltraBold" />
+        <TextBlock Text="WHOTTADOTA" Margin="0,0,60,0" Foreground= "#ffffff" HorizontalAlignment="Left" FontSize="60" Height="70" Width="500" FontWeight="Bold" />
         </StackPanel>
                 
-        <StackPanel Grid.Row="5" Spacing="25"  Grid.Column="" Orientation="Horizontal">
-            <Button BorderBrush="Aqua" BorderThickness="4" Name="TournamentsBTN" Click="TournamentsBTN_OnClick" Background = "MediumVioletRed" Foreground="Aquamarine" Content="Турниры" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Left" FontSize="25"/>
-            <Button BorderBrush="Aqua" BorderThickness="4" Name="TeamsBTN" Click="TeamsBTN_OnClick" Background = "MediumVioletRed" Foreground="Aquamarine"  Content="Команды" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Center" FontSize="25"  />
-            <Button  BorderBrush="Aqua" BorderThickness="4" Name="NewsBTN" Click="NewsBTN_OnClick" Background = "MediumVioletRed" Foreground="Aquamarine"  Content="Новости" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150"  HorizontalAlignment="Right" FontSize="25"  />
+        <StackPanel Grid.Row="5" Spacing="70"  Grid.Column="0" Orientation="Horizontal">
+            <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="TournamentsBTN" Click="TournamentsBTN_OnClick" Background = "Transparent" Foreground="White" Content="Турниры" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Left" FontSize="21"/>
+            <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="TeamsBTN" Click="TeamsBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Команды" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Center" FontSize="21"  />
+            <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="NewsBTN" Click="NewsBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Выйти" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150"  HorizontalAlignment="Right" FontSize="21"  />
         </StackPanel>
         
         </Grid>

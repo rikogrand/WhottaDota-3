@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:whottadota="clr-namespace:whottadota"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.SettingsWindow"
+        Title="SettingsWindow"
+        Height="400"
+        Width="700"
+        x:DataType="whottadota:Settings"
+        Background="Transparent"
+        TransparencyLevelHint="AcrylicBlur"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+        >
+     <Grid>
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition ></ColumnDefinition>
+           <ColumnDefinition ></ColumnDefinition>
+           <ColumnDefinition ></ColumnDefinition>
+           <ColumnDefinition ></ColumnDefinition>
+           <ColumnDefinition ></ColumnDefinition>
+           <ColumnDefinition ></ColumnDefinition>
+       </Grid.ColumnDefinitions>
+       <Grid.RowDefinitions>
+           <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+           <RowDefinition></RowDefinition>
+       </Grid.RowDefinitions>
+        <TextBlock Foreground="Aqua" FontSize="15" FontWeight="ExtraBold" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Формат турниров</TextBlock>
+         <ComboBox BorderBrush="Aqua" x:DataType="whottadota:Format"  FontSize="15" FontWeight="ExtraBold" Foreground="MediumVioletRed" BorderThickness="3" Grid.Row="1" Grid.Column="3"  Name="formatCB"  Height="40" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"
+                   DisplayMemberBinding="{Binding Name}">
+         </ComboBox>
+       <TextBlock Foreground="Aqua" FontSize="15" FontWeight="ExtraBold" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Локация</TextBlock>
+       <ComboBox BorderBrush="Aqua" x:DataType="whottadota:ThirdPlace"  FontSize="15" FontWeight="ExtraBold" Foreground="MediumVioletRed" BorderThickness="3" Grid.Row="2" Grid.Column="3"  Name="thirdplaceCB"  Height="40" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"
+           DisplayMemberBinding="{Binding YesOrNo}">
+       </ComboBox>
+        <TextBlock Foreground="Aqua" FontSize="15" FontWeight="ExtraBold" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center">Дата окончания</TextBlock>
+         <ComboBox BorderBrush="Aqua" x:DataType="whottadota:Language"  FontSize="15" FontWeight="ExtraBold" Foreground="MediumVioletRed" BorderThickness="3" Grid.Row="3" Grid.Column="3"  Name="languageCB"  Height="40" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"
+                   DisplayMemberBinding="{Binding Name}">
+         </ComboBox>
+        <StackPanel  HorizontalAlignment="Center" Grid.Row="6" Grid.Column="3" Width="300" Spacing="20" Orientation="Horizontal">
+           <Button Name="SaveSettings" Click="SaveSettings_OnClick"  FontSize="20" HorizontalContentAlignment="Center" FontWeight="ExtraBold" BorderBrush="Aqua" BorderThickness="2"  Height="40" Width="150"  Background = "MediumVioletRed" Foreground="Aquamarine" Content="Сохранить"/>
+           <Button Name="BackBTN" Click="BackBTN_OnClick"  FontSize="20" HorizontalContentAlignment="Center" FontWeight="ExtraBold" BorderBrush="Aqua" BorderThickness="2"  Height="40" Width="150"  Background = "MediumVioletRed" Foreground="Aquamarine" Content="Вернуться"/>
+
+        </StackPanel>
+   </Grid>
+</Window>

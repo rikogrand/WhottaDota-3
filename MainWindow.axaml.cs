@@ -17,16 +17,19 @@ public partial class MainWindow : Window
         tournamentWindow.Show();
         this.Close();
     }
+    
 
-    private void TeamsBTN_OnClick(object? sender, RoutedEventArgs e)
+    private void ExitBTN_OnClick(object? sender, RoutedEventArgs e)
     {
-        TeamWindow teamWindow = new TeamWindow();
-        this.Hide();
-        teamWindow.Show();
+        ExitWindow exitWindow = new ExitWindow();
+        exitWindow.Show();
+        this.Close();
     }
 
-    private void NewsBTN_OnClick(object? sender, RoutedEventArgs e)
+    private void SettingsBTN_OnClick(object? sender, RoutedEventArgs e)
     {
-     
+        SettingsWindow teamWindow = new SettingsWindow();
+        this.Hide();
+        teamWindow.Show();
     }
 }

@@ -1,0 +1,53 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:whottadota="clr-namespace:whottadota"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.EditTournamentWindow"
+        Title="Изменить мероприятие"
+        Height="660"
+        Width="900"
+        x:DataType="whottadota:Tournament"
+        Background="Black"
+        TransparencyLevelHint="AcrylicBlur"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+        
+        >
+   <Grid>
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition />
+           <ColumnDefinition />
+           <ColumnDefinition />
+           <ColumnDefinition />
+           <ColumnDefinition />
+           <ColumnDefinition />
+       </Grid.ColumnDefinitions>
+       <Grid.RowDefinitions>
+           <RowDefinition />
+           <RowDefinition />
+           <RowDefinition />
+           <RowDefinition />
+           <RowDefinition />
+           <RowDefinition />
+           <RowDefinition />
+       </Grid.RowDefinitions>
+        <TextBlock Foreground="Aqua" FontSize="18" FontWeight="ExtraBold" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Название</TextBlock>
+        <TextBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="Purple" BorderThickness="3" Grid.Row="1"  Grid.Column="3" Name="nameTournamentTB" Height="40" HorizontalAlignment="Left" Width="200"/>
+       <TextBlock Foreground="Aqua" FontWeight="ExtraBold"  FontSize="18" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center">Дата начала</TextBlock>
+       <DatePicker BorderBrush="Aqua" FontSize="21" FontWeight="ExtraBold" Foreground="Purple" BorderThickness="3" Grid.Row="2" Grid.Column="3"   Name="startDateDP" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" SelectedDate="{Binding StartDate }"/>
+       
+       <TextBlock Foreground="Aqua" FontSize="18" FontWeight="ExtraBold" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Локация</TextBlock>
+       <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="Purple" BorderThickness="3" Grid.Row="3" Grid.Column="3"  Name="locationCB"  Height="40" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200"
+           DisplayMemberBinding="{Binding Name}" />
+        <TextBlock Foreground="Aqua" FontSize="18" FontWeight="ExtraBold" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center">Дата окончания</TextBlock>
+        <DatePicker BorderBrush="Aqua" FontSize="21"  FontWeight="ExtraBold" Foreground="Purple" BorderThickness="3"  Grid.Row="4" Grid.Column="3"   Name="endDateDP" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Width="300" SelectedDate="{Binding EndDate }"/>
+        <TextBlock Foreground="Aqua" FontSize="18" FontWeight="ExtraBold" Grid.Row="5" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center">Призовой фонд</TextBlock>
+        <TextBox BorderBrush="Aqua" FontSize="15" FontWeight="ExtraBold" Foreground="Purple" BorderThickness="3" Grid.Row="5" Grid.Column="3"   Name="prizePoolTB" Height="40" HorizontalAlignment="Left" Width="200" Text="{Binding PrizePool }"/>
+        <StackPanel  HorizontalAlignment="Center" Grid.Row="6" Grid.Column="3" Width="300" Spacing="10" Orientation="Horizontal">
+           <Button Name="CnfrmEditTournamentBTN" Click="CnfrmEditTournamentBTN_OnClick"   FontSize="20" HorizontalContentAlignment="Center" FontWeight="ExtraBold" BorderBrush="Aqua" BorderThickness="2"  Height="40" Width="150"  Background = "MediumVioletRed" Foreground="Aquamarine" Content="Изменить"/>
+        </StackPanel>
+   </Grid>
+</Window>

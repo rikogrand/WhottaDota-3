@@ -1,0 +1,300 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:whottadota="clr-namespace:whottadota"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.TournamentWindow"
+       Title="Просмотр турниров"
+    Height="660"
+    Width="1530"
+        x:DataType="whottadota:Tournament"
+        Background="Black"
+        TransparencyLevelHint="AcrylicBlur"
+    WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+       >
+    <Window.Styles>
+        
+        <Style Selector="Button TextBlock">
+
+                <Setter Property="Effect">
+                    <DropShadowEffect OffsetX="0" OffsetY="0" Opacity="1" Color="Blue" BlurRadius="20" />
+                </Setter>
+
+        </Style>
+        <Style Selector="TabControl">
+            <Setter Property="Height" Value="650"/>
+        </Style>
+        <Style Selector="TabControl WrapPanel">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+
+        <Style Selector="TabItem">
+            <Style Selector="^ /template/ Border#PART_SelectedPipe">
+                <Setter Property="Background" Value="Red" />
+            </Style>
+            <Style Selector="^ TextBlock">
+                <Setter Property="Effect">
+                    <DropShadowEffect OffsetX="0" OffsetY="0" Opacity="1" Color="Black" BlurRadius="50" />
+                </Setter>
+            </Style>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background"  Value="Transparent" />
+            <Setter Property="Foreground" Value="#AD66D5"/>
+            <Setter Property="FontWeight" Value="UltraBold"/>
+            <Setter Property="Margin" Value="0 0 0 0"/>
+            <Setter Property="Padding" Value="100 0 100 0"/>
+        </Style>
+
+        <Style Selector="TabItem:focus">
+            <Style Selector="^ /template/ Border#PART_SelectedPipe">
+                <Style.Animations>
+                    <Animation Duration="0:0:0:1" Easing="SineEaseInOut" FillMode="Both" IterationCount="INFINITE" PlaybackDirection="AlternateReverse">
+                        <KeyFrame Cue="0">
+                            <Setter Property="Background" Value="Aqua" />
+                        </KeyFrame>
+                        <KeyFrame Cue="100">
+                            <Setter Property="Background" Value="Pink" />
+                        </KeyFrame>
+                    </Animation>
+                </Style.Animations>
+                <Setter Property="Background" Value="Aqua" />
+            </Style>
+            <Setter Property="Margin" Value="0 0 0 0"/>
+            <Setter Property="Padding" Value="10 0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="TabItem:focus /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        
+        <Style Selector="TabItem:selected">
+            <Setter Property="Margin" Value="0 0 0 0"/>
+            <Setter Property="Padding" Value="223 0 223  0"/>
+        </Style>
+        <Style Selector="TabItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="#AD66D5"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </Window.Styles>
+    <TabControl>
+        <TabItem  Header="Мероприятия" VerticalContentAlignment="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2" Grid.Row="1"  >
+                        <DataGrid x:Name="TournamentDG"
+                                   AutoGenerateColumns="False"
+                                   IsReadOnly="True"
+                                   RowHeight="150"
+                                   GridLinesVisibility="All"
+                                   BorderThickness="7"
+                                   BorderBrush="MediumVioletRed"
+                                   Height="500"
+                                   Width="1000"
+                                   HorizontalGridLinesBrush="MediumVioletRed"
+                                   VerticalGridLinesBrush="MediumVioletRed"
+                                   VerticalAlignment="Top"
+                                   FrozenColumnCount="6"
+                                   x:CompileBindings="False">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*"  Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата начала</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold"  Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата окончания</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool, StringFormat='N0'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Призовой фонд</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground="PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Расположение</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                </DataGrid.Columns>
+                        </DataGrid>
+            </Grid>
+                <Button Grid.Row="0" Grid.Column="1" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="TournamentGridBTN" Click="TournamentGridBTN_OnClick" Background = "Transparent" Foreground="White" Content="Сформировать сетку" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="150" HorizontalAlignment="Left" FontSize="11"/>
+                <Button Grid.Row="0" Grid.Column="0" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="BackBTN" Click="BackBTN_OnClick" Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Left" FontSize="11"/>
+                <TextBlock  Foreground="Aqua" Background="Black" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Name="searchTextBlock" Text="Нажмите для поиска" Width="150" Height="40" />
+                <TextBox TextChanged="SearchTextBox_OnTextChanged"   TextWrapping="Wrap" Grid.Row="0" Grid.Column="2"  Width="150" Height="40"  Name="SearchTextBox" />
+                <ComboBox SelectionChanged="SortCB_OnSelectionChanged" Grid.Row="0" Grid.Column="3" Name="SortCB"  Width="200" Height="20"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <ComboBoxItem FontSize="8">Все столбцы</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По названию</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По призовому фонду</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По локации</ComboBoxItem>
+                </ComboBox>
+                <Button Grid.Row="2" Grid.Column="0" FontWeight="UltraBold" BorderBrush="PaleVioletRed" BorderThickness="2,1,2,4" Name="AddTournamentBTN" Click="AddTournamentBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Создать турнир" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="120" HorizontalAlignment="Left" FontSize="11"/>
+                <Button Grid.Row="3" Grid.Column="0" FontWeight="UltraBold" BorderBrush="PaleVioletRed" BorderThickness="2,1,2,4" Name="EditTournamentBTN" Click="EditTournamentBTN_OnClick" Background = "Transparent" Foreground="White" Content="Изменить турнир" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="120" HorizontalAlignment="Left" FontSize="11"/>
+                <Button Grid.Row="4" Grid.Column="0" FontWeight="UltraBold" BorderBrush="PaleVioletRed" BorderThickness="2,1,2,4" Name="DeleteTournamentBTN" Click="DeleteTournamentBTN_OnClick" Background = "Transparent" Foreground="White" Content="Удалить турнир" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="120" HorizontalAlignment="Left" FontSize="11"/>
+            </Grid>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <TextBlock VerticalAlignment="Center">Отчеты</TextBlock>
+            </TabItem.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button IsVisible="False" Grid.Row="3" Grid.Column="2" FontWeight="UltraBold" BorderBrush="PaleVioletRed" BorderThickness="2,1,2,4" Name="SaveYearStatsBTN" Click="SaveYearTournamentStatsBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Выгрузить данные" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="140" HorizontalAlignment="Center" FontSize="11"/>
+                <TextBlock Foreground="PaleVioletRed"  IsVisible="False" Text="Количество турниров за год" TextWrapping="Wrap" Grid.Row="1" Grid.Column="2"  Width="150" Height="40"   Name="CountYearStatsTextBlock" />
+                <TextBox  Foreground="Aqua" IsVisible="False" IsReadOnly="True"  TextWrapping="Wrap" Grid.Row="2" Grid.Column="2"  Width="150" Height="40"   Name="CountYearStatsTextBox" />
+                <CheckBox Foreground="Aqua"  IsCheckedChanged="YearTournamentCheckBox_OnIsCheckedChanged" Grid.Row="2" Grid.Column="0" Name="YearTournamentCheckBox" Content="Проведенные мероприятия за год" />
+                <DataGrid Grid.Row="1" Grid.Column="1" x:Name="YearTournamentStatsDG"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          IsVisible="False"
+                          RowHeight="150"
+                          GridLinesVisibility="All"
+                          BorderThickness="7"
+                          BorderBrush="MediumVioletRed"
+                          Height="500"
+                          Width="650"
+                          HorizontalGridLinesBrush="MediumVioletRed"
+                          VerticalGridLinesBrush="MediumVioletRed"
+                          VerticalAlignment="Top"
+                          FrozenColumnCount="6"
+                          x:CompileBindings="False">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Width="*" FontSize="10"   Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock  TextWrapping="Wrap"  FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="10"  Foreground="Black" >Название</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*"  FontSize="10" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="10" Foreground="Black">Дата начала</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed" FontSize="10"  FontWeight="ExtraBold"  Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="10" Foreground="Black">Дата окончания</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" FontSize="10" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool, StringFormat='N0'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="10" Foreground="Black">Призовой фонд</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground="PaleVioletRed" FontSize="10"  FontWeight="ExtraBold" Binding="{Binding Location}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="10"  Foreground="Black">Расположение</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                <Button IsVisible="False" Grid.Row="3" Grid.Column="2" FontWeight="UltraBold" BorderBrush="PaleVioletRed" BorderThickness="2,1,2,4" Name="SavePrizePoolStatsBTN" Click="SavePrizePoolStatsBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Выгрузить данные" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="140" HorizontalAlignment="Center" FontSize="11"/>
+                <TextBlock Foreground="PaleVioletRed"  IsVisible="False" Text="Сумма призовых за год" TextWrapping="Wrap" Grid.Row="1" Grid.Column="2"  Width="150" Height="40"   Name="CountYearPrizePoolStatsTextBlock" />
+                <TextBox Foreground="Aqua"  IsVisible="False" IsReadOnly="True"  TextWrapping="Wrap" Grid.Row="2" Grid.Column="2"  Width="150" Height="40"   Name="CountYearPrizePoolStatsTextBox" />
+                <CheckBox  Foreground="Aqua" IsCheckedChanged="YearPrizePoolStatsCheckBox_OnIsCheckedChanged" Name="YearPrizePoolStatsCheckBox" Grid.Row="4" Grid.Column="0" Content="Отчетность по призовому фонду" />
+                <DataGrid Grid.Row="1" Grid.Column="1" x:Name="YearPrizePoolStatsDG"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          RowHeight="150"
+                          IsVisible="False"
+                          GridLinesVisibility="All"
+                          BorderThickness="7"
+                          BorderBrush="MediumVioletRed"
+                          Height="500"
+                          Width="650"
+                          HorizontalGridLinesBrush="MediumVioletRed"
+                          VerticalGridLinesBrush="MediumVioletRed"
+                          VerticalAlignment="Top"
+                          FrozenColumnCount="6"
+                          x:CompileBindings="False">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*"  Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool, StringFormat='N0'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Призовой фонд</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                <Button IsVisible="False" Grid.Row="3" Grid.Column="2" FontWeight="UltraBold" BorderBrush="PaleVioletRed" BorderThickness="2,1,2,4" Name="SaveLocationStatsBTN" Click="SaveLocationStatsBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Выгрузить данные" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="140" HorizontalAlignment="Center" FontSize="11"/>
+                <TextBlock Foreground="PaleVioletRed" IsVisible="False" Text="Самое популярное местопроведение" TextWrapping="Wrap" Grid.Row="1" Grid.Column="2"  Width="150" Height="40"   Name="MostPopularLocationStatsTextBlock" />
+                <TextBox Foreground="Aqua" IsVisible="False" IsReadOnly="True"  TextWrapping="Wrap" Grid.Row="2" Grid.Column="2"  Width="150" Height="40"   Name="MostPopularLocationStatsTextBox" />
+                <CheckBox  Foreground="Aqua"   IsCheckedChanged="RatingLocationStatsCheckBox_OnIsCheckedChanged" Name="RatingLocationStatsCheckBox" Grid.Row="6" Grid.Column="0" Content="Рейтинг местоположений мероприятий" />
+                <DataGrid Grid.Row="1" Grid.Column="1" x:Name="RatingLocationStatsDG"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          RowHeight="150"
+                          IsVisible="False"
+                          GridLinesVisibility="All"
+                          BorderThickness="7"
+                          BorderBrush="MediumVioletRed"
+                          Height="500"
+                          Width="650"
+                          HorizontalGridLinesBrush="MediumVioletRed"
+                          VerticalGridLinesBrush="MediumVioletRed"
+                          VerticalAlignment="Top"
+                          FrozenColumnCount="6"
+                          x:CompileBindings="False">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Локация</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding CountLocation}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Частота проведения</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                </DataGrid.Columns>
+                        </DataGrid>
+                      </Grid>
+        </TabItem>
+        </TabControl>
+</Window>

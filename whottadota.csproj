@@ -29,4 +29,52 @@
       <None Remove="Image\betboomteam.jpg" />
       <AvaloniaResource Include="Image\betboomteam.jpg" />
     </ItemGroup>
+
+
+    <ItemGroup>
+        <Compile Update="Views\TournamentWindow.axaml.cs">
+            <DependentUpon>TournamentWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\TournamentGridWindow.axaml.cs">
+            <DependentUpon>TournamentGridWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\PlayerWindow.axaml.cs">
+            <DependentUpon>PlayerWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\MainWindow.axaml.cs">
+            <DependentUpon>MainWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\GuestTournamentWindow.axaml.cs">
+            <DependentUpon>GuestTournamentWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\EditTournamentWindow.axaml.cs">
+            <DependentUpon>EditTournamentWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\DeleteTournamentWindow.axaml.cs">
+            <DependentUpon>DeleteTournamentWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\CreateTournament.axaml.cs">
+            <DependentUpon>CreateTournament.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\AuthWindow.axaml.cs">
+            <DependentUpon>AuthWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\ExitWindow.axaml.cs">
+            <DependentUpon>ExitWindow.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Update="Views\TournamentGuestGrid.axaml.cs">
+            <DependentUpon>TournamentGuestGrid.axaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+    </ItemGroup>
 </Project>

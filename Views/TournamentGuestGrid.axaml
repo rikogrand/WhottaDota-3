@@ -1,0 +1,61 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.TournamentGuestGrid"
+        Background="Black"
+        Title="Турнирная сетка"
+        TransparencyLevelHint="AcrylicBlur"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+        Width="1000">
+    <Grid>
+      <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+
+          <RowDefinition />
+          <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+
+      </Grid.ColumnDefinitions>
+        <TextBox IsReadOnly="True"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed"  Grid.Row="0" Grid.Column="4"  Name="FirstPlaceTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+      
+        <TextBox IsReadOnly="True"  FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="1" Grid.Column="4"  Name="FirstTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" Grid.Row="3" Grid.Column="0"  Name="SecondPlaceTextBox"  Height="20"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="3" Grid.Column="1"  Name="SecondTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed"  Grid.Row="5" Grid.Column="0"  Name="ThirdPlaceTextBox"  Height="20"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="5" Grid.Column="1"  Name="ThirdTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed"  Grid.Row="5" Grid.Column="3"  Name="FourthPlaceTextBox"  Height="20"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"/>
+        <TextBox IsReadOnly="True"  FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="5" Grid.Column="4"  Name="FourthTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        <TextBox IsReadOnly="True"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed"  Grid.Row="7" Grid.Column="3"  Name="FifthPlaceTextBox"  Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="7" Grid.Column="4"  Name="FifthTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        
+        <TextBox IsReadOnly="True"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed"  Grid.Row="6" Grid.Column="6"  Name="SixthPlaceTextBox"  Height="20"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"/>
+        <TextBox  IsReadOnly="True" FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="6" Grid.Column="7"  Name="SixthTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        
+        <TextBox   FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed"  Grid.Row="8" Grid.Column="6"  Name="SeventhPlaceTextBox"  Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"/>
+        <TextBox  FontSize="15" FontWeight="ExtraBold" Foreground="White"  Grid.Row="8" Grid.Column="7"  Name="SeventhTeamTextBox"  Height="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"/>
+        <Button Grid.Row="9" Grid.Column="2" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="BackBTN"  Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="150" HorizontalAlignment="Left" FontSize="11"/>
+    </Grid>
+</Window>

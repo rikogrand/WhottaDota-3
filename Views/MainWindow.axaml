@@ -18,10 +18,10 @@
         <Style.Animations>
                 <Animation Duration="0:0:0:5" Easing="SineEaseInOut" FillMode="Both" IterationCount="INFINITE" PlaybackDirection="AlternateReverse">
                     <KeyFrame Cue="0">
-                        <Setter Property="BorderBrush" Value="Aqua"></Setter>
+                        <Setter Property="BorderBrush" Value="Aqua" />
                     </KeyFrame>
                     <KeyFrame Cue="100">
-                        <Setter Property="BorderBrush" Value="MediumVioletRed"></Setter>
+                        <Setter Property="BorderBrush" Value="MediumVioletRed" />
                     </KeyFrame>
                 </Animation>
             </Style.Animations>
@@ -29,19 +29,19 @@
         </Window.Styles>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50" > </ColumnDefinition>
-            <ColumnDefinition Width="150"> </ColumnDefinition>
-            <ColumnDefinition Width="150"> </ColumnDefinition>
-            <ColumnDefinition Width="150"> </ColumnDefinition>
-            <ColumnDefinition Width="150"> </ColumnDefinition>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30" ></RowDefinition>
-            <RowDefinition Height="90" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="90" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1"  Grid.Column="1">
         <TextBlock Foreground= "#7442c8" Text="WELCOME TO" FontSize="25" Height="50" Width="180" FontWeight="UltraBold" />
@@ -50,7 +50,7 @@
                 
         <StackPanel Grid.Row="5" Spacing="70"  Grid.Column="0" Orientation="Horizontal">
             <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="TournamentsBTN" Click="TournamentsBTN_OnClick" Background = "Transparent" Foreground="White" Content="Турниры" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Left" FontSize="21"/>
-            <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="SettingsBTN" Click="SettingsBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Настройки" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Center" FontSize="21"  />
+            <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="PlayersBTN" Click="PlayersBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Участники" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150" HorizontalAlignment="Center" FontSize="21"  />
             <Button FontWeight="UltraBold" CornerRadius="40" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="ExitBTN" Click="ExitBTN_OnClick" Background = "Transparent" Foreground="White"  Content="Выйти" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="100" Width="150"  HorizontalAlignment="Right" FontSize="21"  />
         </StackPanel>
         

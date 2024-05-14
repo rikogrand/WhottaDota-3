@@ -17,7 +17,7 @@ public partial class MainWindow : Window
         tournamentWindow.Show();
         this.Close();
     }
-    
+
 
     private void ExitBTN_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -26,10 +26,11 @@ public partial class MainWindow : Window
         this.Close();
     }
 
-    private void SettingsBTN_OnClick(object? sender, RoutedEventArgs e)
+
+    private void PlayersBTN_OnClick(object? sender, RoutedEventArgs e)
     {
-        SettingsWindow teamWindow = new SettingsWindow();
-        this.Hide();
-        teamWindow.Show();
+        PlayerWindow playerWindow = new PlayerWindow();
+        playerWindow.Show();
+        this.Close();
     }
 }

@@ -1,0 +1,92 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:whottadota="clr-namespace:whottadota"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.GuestTournamentWindow"
+       Title="Просмотр турниров"
+    Height="660"
+    Width="1530"
+        x:DataType="whottadota:Tournament"
+        Background="Black"
+        TransparencyLevelHint="AcrylicBlur"
+    WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+       >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            <Grid Grid.Column="2" Grid.Row="1"  >
+                        <DataGrid x:Name="GuestTournamentDG"
+                                   AutoGenerateColumns="False"
+                                   IsReadOnly="True"
+                                   RowHeight="150"
+                                   GridLinesVisibility="All"
+                                   BorderThickness="7"
+                                   BorderBrush="MediumVioletRed"
+                                   Height="500"
+                                   Width="1000"
+                                   HorizontalGridLinesBrush="MediumVioletRed"
+                                   VerticalGridLinesBrush="MediumVioletRed"
+                                   VerticalAlignment="Top"
+                                   FrozenColumnCount="6"
+                                   x:CompileBindings="False">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Name}" >
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock   FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black" >Название</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*"  Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding StartDate, StringFormat='dd.MM.yyyy'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold"  HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата начала</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold"  Binding="{Binding EndDate, StringFormat='dd.MM.yyyy'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Дата окончания</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground= "PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding PrizePool, StringFormat='N0'}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Призовой фонд</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Foreground="PaleVioletRed"  FontWeight="ExtraBold" Binding="{Binding Location}">
+                                    <DataGridTextColumn.Header>
+                                        <TextBlock FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="15"  Foreground="Black">Расположение</TextBlock>
+                                    </DataGridTextColumn.Header>
+                                </DataGridTextColumn>
+                                </DataGrid.Columns>
+                        </DataGrid>
+            </Grid>
+                <Button Grid.Row="0" Grid.Column="1" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="TournamentGridBTN" Click="TournamentGridBTN_OnClick" Background = "Transparent" Foreground="White" Content="Просмотреть сетку" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="150" HorizontalAlignment="Center" FontSize="11"/>
+                <Button Grid.Row="0" Grid.Column="0" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="BackBTN" Click="BackBTN_OnClick" Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="80" HorizontalAlignment="Right" FontSize="11"/>
+                <TextBlock  Foreground="Aqua" Background="Black" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Name="searchTextBlock" Text="Нажмите для поиска" Width="150" Height="40" />
+                <TextBox TextChanged="SearchTextBox_OnTextChanged"   TextWrapping="Wrap" Grid.Row="0" Grid.Column="2"  Width="150" Height="40"  Name="SearchTextBox" />
+                <ComboBox SelectionChanged="SortCB_OnSelectionChanged" Grid.Row="0" Grid.Column="3" Name="SortCB"  Width="200" Height="20"   HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <ComboBoxItem FontSize="8">Все столбцы</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По названию</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По призовому фонду</ComboBoxItem>
+                    <ComboBoxItem FontSize="8">По локации</ComboBoxItem>
+                </ComboBox>
+                </Grid>
+        
+</Window>
+

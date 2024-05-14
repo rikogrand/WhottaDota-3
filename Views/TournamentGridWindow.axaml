@@ -1,0 +1,74 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.TournamentGridWindow"
+      
+       Background="Black"
+        Title="Турнирная сетка"
+        TransparencyLevelHint="AcrylicBlur"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        ExtendClientAreaToDecorationsHint="True"
+    Width="1000">
+    <Grid>
+      <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+
+          <RowDefinition />
+          <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+
+      </Grid.ColumnDefinitions>
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold"  Foreground="DarkRed" BorderThickness="3" Grid.Row="0" Grid.Column="4"  Name="firstPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold"  Foreground="White" BorderThickness="3" Grid.Row="1" Grid.Column="4"  Name="firstTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" BorderThickness="3" Grid.Row="3" Grid.Column="0"  Name="secondPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="White" BorderThickness="3" Grid.Row="3" Grid.Column="1"  Name="secondTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" BorderThickness="3" Grid.Row="5" Grid.Column="0"  Name="thirdPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="White" BorderThickness="3" Grid.Row="5" Grid.Column="1"  Name="thirdTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" BorderThickness="3" Grid.Row="5" Grid.Column="3"  Name="fourthPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="White" BorderThickness="3" Grid.Row="5" Grid.Column="4"  Name="fourthTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" BorderThickness="3" Grid.Row="7" Grid.Column="3"  Name="fifthPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="White" BorderThickness="3" Grid.Row="7" Grid.Column="4"  Name="fifthTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" BorderThickness="3" Grid.Row="6" Grid.Column="6"  Name="sixthPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="White" BorderThickness="3" Grid.Row="6" Grid.Column="7"  Name="sixthTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="DarkRed" BorderThickness="3" Grid.Row="8" Grid.Column="6"  Name="seventhPlaceCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Right" VerticalAlignment="Center" Width="110"
+                  DisplayMemberBinding="{Binding Name}" />
+        <ComboBox BorderBrush="Aqua"  FontSize="15" FontWeight="ExtraBold" Foreground="White" BorderThickness="3" Grid.Row="8" Grid.Column="7"  Name="seventhTeamCB"  Height="20" x:CompileBindings="False" HorizontalAlignment="Left" VerticalAlignment="Center" Width="130"
+                  DisplayMemberBinding="{Binding Name}" />
+        <Button Grid.Row="9" Grid.Column="2" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="SaveBTN" Click="SaveBTN_OnClick"  Background = "Transparent" Foreground="White" Content="Сохранить" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="150" HorizontalAlignment="Left" FontSize="11"/>
+        <Button Grid.Row="9" Grid.Column="4" FontWeight="UltraBold" BorderBrush="Aqua" BorderThickness="2,1,2,4" Name="BackBTN"  Background = "Transparent" Foreground="White" Content="Вернуться" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Width="150" HorizontalAlignment="Left" FontSize="11"/>
+  </Grid>
+</Window>

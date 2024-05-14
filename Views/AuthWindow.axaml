@@ -1,0 +1,46 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="whottadota.AuthWindow"
+        Title="Авторизация"
+        Height="300"
+        Width="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="DarkBlue">
+      <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+
+      </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+                    <TextBlock FontWeight="UltraBold" Foreground="Aqua" Grid.Row="1" Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center">Логин</TextBlock>
+                    <TextBox Grid.Column="3"  Grid.Row="2"  Name="LoginTextBox" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200"/>
+       
+                    <TextBlock FontWeight="UltraBold" Foreground="Aqua" Grid.Column="3"   Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center">Пароль</TextBlock>
+                    <TextBox Grid.Column="3"   Grid.Row="4"  Name="PasswordTextBox" PasswordChar="*" VerticalAlignment="Top" Height="10" HorizontalAlignment="Center" Width="200"/>
+                    <TextBlock FontWeight="UltraBold" Foreground="Aqua" Grid.Column="5"    Grid.Row="4" VerticalAlignment="Center"  Width="120"  HorizontalAlignment="Right">Показать пароль</TextBlock>
+                    <CheckBox Grid.Column="6"  VerticalAlignment="Center"  HorizontalAlignment="Right"  Grid.Row="4" Name="HidePasswordCheckBox" IsCheckedChanged="HidePasswordCheckBox_OnIsCheckedChanged"/>
+                    <StackPanel Grid.Column="2"   HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7"  Spacing="20" Orientation="Horizontal">
+                        <Button FontWeight="UltraBold" Foreground="DeepPink" BorderThickness="3" BorderBrush="Aqua" Background="Azure"  Name="GuestButton" Content="Войти как гость" Click="GuestButton_OnClick" />
+                        <Button  FontWeight="UltraBold" Foreground="DeepPink" BorderThickness="3" BorderBrush="Aqua" Background="Azure" Name="LoginButton" Content="Войти" Click="LoginButton_OnClick"/>
+     </StackPanel>
+                </Grid>
+          
+</Window>

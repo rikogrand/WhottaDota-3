@@ -4,15 +4,34 @@
     <option name="projectPerEditor">
       <map>
         <entry key="App.axaml" value="whottadota.csproj" />
+        <entry key="AuthWindow.axaml" value="whottadota.csproj" />
+        <entry key="CreateTournament.axaml" value="whottadota.csproj" />
+        <entry key="DeleteTournamentWindow.axaml" value="whottadota.csproj" />
         <entry key="DeleteTournamentsByUsersWindow.axaml" value="whottadota.csproj" />
         <entry key="EditByUsersTournamentsWindow.axaml" value="whottadota.csproj" />
+        <entry key="EditTournamentWindow.axaml" value="whottadota.csproj" />
         <entry key="ExitWindow.axaml" value="whottadota.csproj" />
+        <entry key="GuestTournamentWindow.axaml" value="whottadota.csproj" />
         <entry key="MainWindow.axaml" value="whottadota.csproj" />
         <entry key="NewsWindow.axaml" value="whottadota.csproj" />
+        <entry key="PlayerWindow.axaml" value="whottadota.csproj" />
+        <entry key="PlayerWindowW.axaml" value="whottadota.csproj" />
         <entry key="SettingsWindow.axaml" value="whottadota.csproj" />
         <entry key="TeamWindow.axaml" value="whottadota.csproj" />
         <entry key="ThemeResourse.axaml" value="whottadota.csproj" />
+        <entry key="TournamentGridWindow.axaml" value="whottadota.csproj" />
+        <entry key="TournamentGuestGrid.axaml" value="whottadota.csproj" />
         <entry key="TournamentWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/AuthWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/CreateTournament.axaml" value="whottadota.csproj" />
+        <entry key="Views/DeleteTournamentWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/EditTournamentWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/GuestTournamentWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/MainWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/PlayerWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/TournamentGridWindow.axaml" value="whottadota.csproj" />
+        <entry key="Views/TournamentGuestGrid.axaml" value="whottadota.csproj" />
+        <entry key="Views/TournamentWindow.axaml" value="whottadota.csproj" />
       </map>
     </option>
   </component>
